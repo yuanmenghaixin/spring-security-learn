@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+encoding//src/main/java=UTF-8
+encoding//src/main/java/com/authority/controller=GBK
+encoding//src/main/java/com/authority/dao/impl=GBK
+encoding//src/main/java/com/authority/filter/MyAccessDesisionmanager.java=GBK
+encoding//src/main/java/com/authority/filter/MyFilterSecurityInterceptor.java=GBK
+encoding//src/main/java/com/authority/filter/MySecurityMetadataSource.java=GBK
+encoding//src/main/java/com/authority/handler/MyLoginFailHandler.java=GBK
+encoding//src/test/java=UTF-8
+encoding/<project>=UTF-8
