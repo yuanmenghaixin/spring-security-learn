@@ -20,11 +20,11 @@
 
 </table>
 <div id="role_authority_res_tools" style="text-align: right;">
-    <security:authorize ifAllGranted="AUTH_ROLE_AUTHORITY_ADD">
+    <security:authorize access="hasRole('AUTH_ROLE_AUTHORITY_ADD')">
         <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true"
            onclick="addRoleAuthority();">添加</a>
     </security:authorize>
-    <security:authorize ifAllGranted="AUTH_ROLE_AUTHORITY_DELETE">
+    <security:authorize access="hasRole('AUTH_ROLE_AUTHORITY_DELETE')">
         <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-del',plain:true"
            onclick="delRoleAuthority()">删除</a>
     </security:authorize>

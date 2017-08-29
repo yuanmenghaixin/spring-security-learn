@@ -15,6 +15,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.authority.dao.UserInfoDao;
+import com.authority.model.SysAuthorities;
+import com.authority.model.SysRoles;
 import com.authority.model.SysUsers;
 import com.authority.model.UserLoginLog;
 import com.authority.service.UserInfoService;
@@ -45,6 +47,8 @@ public class UserInfoServiceImpl implements UserInfoService {
 		if (StringUtil.isNotEmpty(arg0)) {
 			SysUsers users = userInfoDao.getUserByName(arg0.trim());
 			if (users != null) {
+				List<GrantedAuthority> authorities=getGrantedAuthorities(users);
+				users.setAuthorities(authorities);
 				return users;
 			}
 		}
@@ -57,19 +61,12 @@ public class UserInfoServiceImpl implements UserInfoService {
 	 */
 	private List<GrantedAuthority> getGrantedAuthorities(SysUsers users){
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-		Collection<GrantedAuthority> authoritieColl=(Collection<GrantedAuthority>) users.getAuthorities();
-		Iterator<GrantedAuthority>  sdf=authoritieColl.iterator();
-		
-		while(sdf.hasNext()){
-			GrantedAuthority grantedAuthority=sdf.next();
-			//authorities.add(new SimpleGrantedAuthority("ROLE_"+grantedAuthority.()));//
+		 Collection<GrantedAuthority> asd= (Collection<GrantedAuthority>) users.getAuthorities();
+		 Iterator<GrantedAuthority>qwe= asd.iterator();
+		while(qwe.hasNext()){
+			authorities.add(new SimpleGrantedAuthority("ROLE_"+qwe.next().getAuthority()));
 		}
-		/*for(UserProfile userProfile : users.getAuthorities()){
-			logger.info("UserProfile : {}", userProfile);//spring定义了ROLE_前缀
-			authorities.add(new SimpleGrantedAuthority("ROLE_"+userProfile.getType()));//
-		}
-		logger.info("authorities : {}", authorities);*/
 		return authorities;
-	}
 
+	}
 }

@@ -2,7 +2,7 @@
  * Created with IntelliJ IDEA.
  * User: Tim
  * Date: 12-12-22
- * Time: ÏÂÎç2:39
+ * Time: ä¸‹åˆ2:39
  * To change this template use File | Settings | File Templates.
  */
 function autoCreateRoleMenu(){
@@ -16,18 +16,18 @@ function autoCreateRoleMenu(){
             success: function (data) {
                 closeProgress();
                 if (data.success) {
-                    showMessager("²Ù×÷³É¹¦£¡");
+                    showMessager("æ“ä½œæˆåŠŸï¼");
                     $("#sys_rolemenu_list").treegrid({
                         url:"admin/rolemenu/list/"+selected
                     });
                     $("#sys_rolemenu_list").treegrid("reload");
                 } else {
-                    $.messager.alert('ÌáÊ¾', '²Ù×÷Ê§°Ü', "warning");
+                    $.messager.alert('æç¤º', 'æ“ä½œå¤±è´¥', "warning");
                 }
             }
         })
     }else{
-        $.messager.alert("ÌáÊ¾","ÇëÑ¡ÔñÒª´´½¨²Ëµ¥µÄ½ÇÉ«!");
+        $.messager.alert("æç¤º","è¯·é€‰æ‹©è¦åˆ›å»ºèœå•çš„è§’è‰²!");
     }
 }
 
@@ -58,15 +58,15 @@ function roleMenuMoveUp(){
             success: function (data) {
                 if (data.success) {
                     closeProgress();
-                    showMessager("²Ù×÷³É¹¦£¡");
+                    showMessager("æ“ä½œæˆåŠŸï¼");
                     reloadRoleMenuRoot();
                 } else {
-                    $.messager.alert('ÌáÊ¾', '²Ù×÷Ê§°Ü', "warning");
+                    $.messager.alert('æç¤º', 'æ“ä½œå¤±è´¥', "warning");
                 }
             }
         })
     }else{
-        $.messager.alert("ÌáÊ¾","ÇëÑ¡ÔñÒª´´½¨²Ëµ¥µÄ½ÇÉ«!");
+        $.messager.alert("æç¤º","è¯·é€‰æ‹©è¦åˆ›å»ºèœå•çš„è§’è‰²!");
     }
 }
 
@@ -83,15 +83,15 @@ function roleMenuMoveDown(){
             success: function (data) {
                 if (data.success) {
                     closeProgress();
-                    showMessager("²Ù×÷³É¹¦£¡");
+                    showMessager("æ“ä½œæˆåŠŸï¼");
                     reloadRoleMenuRoot();
                 } else {
-                    $.messager.alert('ÌáÊ¾', '²Ù×÷Ê§°Ü', "warning");
+                    $.messager.alert('æç¤º', 'æ“ä½œå¤±è´¥', "warning");
                 }
             }
         })
     }else{
-        $.messager.alert("ÌáÊ¾","ÇëÑ¡ÔñÒª´´½¨²Ëµ¥µÄ½ÇÉ«!");
+        $.messager.alert("æç¤º","è¯·é€‰æ‹©è¦åˆ›å»ºèœå•çš„è§’è‰²!");
     }
 }
 
@@ -109,7 +109,7 @@ function roleMenuMoveDown(){
                  if (data) {
                       $("#sys_rolemenu_list").treegrid("loadData",data);
                  } else {
-                     $.messager.alert('ÌáÊ¾', '²Ù×÷Ê§°Ü', "warning");
+                     $.messager.alert('æç¤º', 'æ“ä½œå¤±è´¥', "warning");
                  }
              }
          })

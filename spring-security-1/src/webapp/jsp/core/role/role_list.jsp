@@ -22,10 +22,10 @@
     </thead>
 </table>
 <div id="sys_role_tools" style="text-align: right;">
-  <%--   <security:authorize access="hasRole('AUTH_ROLE_ADD')"> --%>
+  <security:authorize access="hasRole('AUTH_ROLE_ADD')">
         <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true"
            onclick="customerShowDialog({url:'admin/role/add',id:'add_role_record',title:'角色信息',width:660,height:260});">添加</a>
-    <%-- </security:authorize> --%>
+    </security:authorize>
     <security:authorize access="hasRole('AUTH_ROLE_EDIT')">
         <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-edit',plain:true"
            onclick="editRole();">修改</a>

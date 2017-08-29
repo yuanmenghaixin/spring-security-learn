@@ -1,14 +1,14 @@
-//ĞÂÔö
+//æ–°å¢
 function addRole() {
     $("#add_role_record").dialog("open");
     $('#addRoleForm').form("clear");
 }
-//    ĞŞ¸Ä
+//    ä¿®æ”¹
 function editRole() {
 
     var res = $("#role_datagrid").datagrid("getSelected");
     if (res) {
-        customerShowDialog({url:'admin/role/edit/'+res.id,id:'add_role_record',title:'½ÇÉ«ĞÅÏ¢',width:660,height:260});
+        customerShowDialog({url:'admin/role/edit/'+res.id,id:'add_role_record',title:'è§’è‰²ä¿¡æ¯',width:660,height:260});
 //        $("#edit_role_record").dialog({
 //            onLoad:function(){
 //                $("#editRoleForm").form("load", res);
@@ -16,10 +16,10 @@ function editRole() {
 //        });
 //        $("#edit_role_record").dialog("open");
     } else {
-        alert("ÇëÑ¡ÔñÒªĞŞ¸ÄµÄ¼ÇÂ¼");
+        alert("è¯·é€‰æ‹©è¦ä¿®æ”¹çš„è®°å½•");
     }
 }
-//Ìá½»±íµ¥
+//æäº¤è¡¨å•
 function addRoleSubmit() {
     $('#addRoleForm').form("submit", {
         url: "admin/role/add",
@@ -30,9 +30,9 @@ function addRoleSubmit() {
                 $('#addRoleForm').form("clear");
                 $("#add_res_record").dialog("close");
                 $("#role_datagrid").datagrid("reload");
-                $.messager.alert("ÌáÊ¾", "²Ù×÷³É¹¦");
+                $.messager.alert("æç¤º", "æ“ä½œæˆåŠŸ");
             } else {
-                $.messager.alert("ÌáÊ¾", "²Ù×÷Ê§°Ü", "warning");
+                $.messager.alert("æç¤º", "æ“ä½œå¤±è´¥", "warning");
             }
         }
     });
@@ -48,14 +48,14 @@ function editRoleSubmit() {
                 $('#addRoleForm').form("clear");
                 $("#add_res_record").dialog("close");
                 $("#role_datagrid").datagrid("reload");
-                $.messager.alert("ÌáÊ¾", "²Ù×÷³É¹¦");
+                $.messager.alert("æç¤º", "æ“ä½œæˆåŠŸ");
             } else {
-                $.messager.alert("ÌáÊ¾", "²Ù×÷Ê§°Ü", "warning");
+                $.messager.alert("æç¤º", "æ“ä½œå¤±è´¥", "warning");
             }
         }
     });
 }
-//           ²é¿´½ÇÉ«È¨ÏŞ
+//           æŸ¥çœ‹è§’è‰²æƒé™
 function showRoleAuthorities() {
     var _role = $("#role_datagrid").datagrid("getSelected");
     if(_role){
@@ -74,14 +74,14 @@ function showRoleAuthorities() {
         $("#role_authority_list").dialog("open");
 
     }else{
-        $.messager.alert("ÌáÊ¾","ÇëÑ¡ÔñÒª²é¿´µÄ¼ÇÂ¼")
+        $.messager.alert("æç¤º","è¯·é€‰æ‹©è¦æŸ¥çœ‹çš„è®°å½•")
     }
 
 }
 function delRole() {
     var role = $("#role_datagrid").datagrid("getSelected");
     if (role && role.id) {
-        $.messager.confirm('¾¯¸æ', 'È·¶¨ÒªÉ¾³ıÑ¡ÖĞµÄ¼ÇÂ¼Âğ?', function (r) {
+        $.messager.confirm('è­¦å‘Š', 'ç¡®å®šè¦åˆ é™¤é€‰ä¸­çš„è®°å½•å—?', function (r) {
             if (r) {
                 $.ajax({
                     url: 'admin/role/delete',
@@ -90,10 +90,10 @@ function delRole() {
                     data: {roleId: role.id},
                     success: function (data) {
                         if (data.success) {
-                           showMessager("²Ù×÷³É¹¦£¡");
+                           showMessager("æ“ä½œæˆåŠŸï¼");
                             $("#role_datagrid").datagrid("reload");
                         } else {
-                            $.messager.alert('ÌáÊ¾', '²Ù×÷Ê§°Ü', "warning");
+                            $.messager.alert('æç¤º', 'æ“ä½œå¤±è´¥', "warning");
                         }
                     }
                 })
@@ -102,18 +102,18 @@ function delRole() {
             }
         });
     } else {
-        $.messager.alert("´íÎó", "ÇëÑ¡ÔñÒªÉ¾³ıµÄ¼ÇÂ¼", "error");
+        $.messager.alert("é”™è¯¯", "è¯·é€‰æ‹©è¦åˆ é™¤çš„è®°å½•", "error");
     }
 }
-//    ÏÔÊ¾Ìí¼Ó½ÇÉ«È¨ÏŞ
+//    æ˜¾ç¤ºæ·»åŠ è§’è‰²æƒé™
 function addRoleAuthority() {
     $("#role_authority_list_select").dialog("open");
     $("#sys_authority_datagrid_select").datagrid("load")
 }
 
-//Ìí¼Ó½ÇÉ«È¨ÏŞ
+//æ·»åŠ è§’è‰²æƒé™
 function addSelectAuthToRole() {
-    //»ñÈ¡Ñ¡ÖĞÈ¨ÏŞ
+    //è·å–é€‰ä¸­æƒé™
     var selected = $("#sys_authority_datagrid_select").datagrid("getSelections");
     if (selected) {
         var ids = "";
@@ -124,7 +124,7 @@ function addSelectAuthToRole() {
                 ids += selected[n].id;
             }
         }
-        //»ñÈ¡Ñ¡ÖĞ½ÇÉ«
+        //è·å–é€‰ä¸­è§’è‰²
         var _roleId = $("#role_datagrid").datagrid("getSelected").id;
         $.ajax({
             url: 'admin/role/authority/add',
@@ -133,23 +133,23 @@ function addSelectAuthToRole() {
             data: {authIds: ids, roleId: _roleId},
             success: function (data) {
                 if (data.success) {
-                   showMessager("²Ù×÷³É¹¦£¡");
+                   showMessager("æ“ä½œæˆåŠŸï¼");
                     $("#role_authority_datagrid").datagrid("reload");
                     $("#role_authority_list_select").dialog("close");
 
                 } else {
-                    $.messager.alert('ÌáÊ¾', '²Ù×÷Ê§°Ü', "warning");
+                    $.messager.alert('æç¤º', 'æ“ä½œå¤±è´¥', "warning");
                 }
             }
         });
 
     } else {
-        alert("ÇëÑ¡Ôñ×ÊÔ´");
+        alert("è¯·é€‰æ‹©èµ„æº");
     }
 }
-//É¾³ı½ÇÉ«È¨ÏŞ
+//åˆ é™¤è§’è‰²æƒé™
 function delRoleAuthority() {
-    //»ñÈ¡Ñ¡ÖĞÈ¨ÏŞ
+    //è·å–é€‰ä¸­æƒé™
     var selected = $("#role_authority_datagrid").datagrid("getSelections");
     if (selected) {
         var ids = "";
@@ -160,7 +160,7 @@ function delRoleAuthority() {
                 ids += selected[n].id;
             }
         }
-        //»ñÈ¡Ñ¡ÖĞ½ÇÉ«
+        //è·å–é€‰ä¸­è§’è‰²
         var _roleId = $("#role_datagrid").datagrid("getSelected").id;
         $.ajax({
             url: 'admin/role/authority/delete',
@@ -169,16 +169,16 @@ function delRoleAuthority() {
             data: {authIds: ids, roleId: _roleId},
             success: function (data) {
                 if (data.success) {
-                   showMessager("²Ù×÷³É¹¦£¡");
+                   showMessager("æ“ä½œæˆåŠŸï¼");
                     $("#role_authority_datagrid").datagrid("reload");
                 } else {
-                    $.messager.alert('ÌáÊ¾', '²Ù×÷Ê§°Ü', "warning");
+                    $.messager.alert('æç¤º', 'æ“ä½œå¤±è´¥', "warning");
                 }
             }
         });
 
     } else {
-        alert("ÇëÑ¡Ôñ×ÊÔ´");
+        alert("è¯·é€‰æ‹©èµ„æº");
     }
 }
 

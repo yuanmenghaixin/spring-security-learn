@@ -53,27 +53,27 @@
             </tbody>
         </table>
         <div id="user_manager_tools" style="text-align: right;">
-            <security:authorize ifAllGranted="AUTH_USER_ENABLE">
+            <security:authorize access="hasRole('AUTH_USER_ENABLE')">
                 <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-enable',plain:true"
                    onclick="enableUser();">启用/禁用</a>
             </security:authorize>
-            <security:authorize ifAllGranted="AUTH_USER_LOCK">
+            <security:authorize access="hasRole('AUTH_USER_LOCK')">
                 <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-locked',plain:true"
                    onclick="lockUser()">锁定/解锁</a>
             </security:authorize>
-            <security:authorize ifAllGranted="AUTH_USER_ADD">
+            <security:authorize access="hasRole('AUTH_USER_ADD')">
                 <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true"
                    onclick="customerShowDialog({url:'admin/user/add',id:'add_user_record',title:'用户信息',width:620,height:260});">添加</a>
             </security:authorize>
-            <security:authorize ifAllGranted="AUTH_USER_EDIT">
+            <security:authorize access="hasRole('AUTH_USER_EDIT')">
                 <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-edit',plain:true"
                    onclick="editUser()">修改</a>
             </security:authorize>
-            <security:authorize ifAllGranted="AUTH_USER_ROLE_LIST">
+            <security:authorize access="hasRole('AUTH_USER_ROLE_LIST')">
                 <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-role',plain:true"
                    onclick="showUserRole()">角色管理</a>
             </security:authorize>
-            <security:authorize ifAllGranted="AUTH_USER_DELETE">
+            <security:authorize access="hasRole('AUTH_USER_DELETE')">
                 <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-del',plain:true"
                    onclick="delUser()">删除</a>
             </security:authorize>

@@ -49,7 +49,7 @@ public class SecurityMetadataDaoImpl implements SecurityMetadataDao {
 					SysAuthorities anthorities = its.next();
 					MyConfigAttribute configAttribute = new MyConfigAttribute();
 					configAttribute
-							.setAttribute(anthorities.getAuthorityCode());
+							.setAttribute("ROLE_"+anthorities.getAuthorityCode());
 					configList.add(configAttribute);
 					configResource.put(resources.getResourcePath(), configList);
 				}

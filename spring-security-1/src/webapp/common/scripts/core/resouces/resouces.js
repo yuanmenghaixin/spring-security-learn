@@ -1,4 +1,4 @@
-//ĞÂÔö
+//æ–°å¢
 function addRes() {
     $("#add_res_record").dialog("open");
     var res = $("#res_group_datagrid").datagrid("getSelected");
@@ -8,7 +8,7 @@ function addRes() {
         $("#res_parent_name").val(res.resourceName)
     }
 }
-//ĞŞ¸Ä
+//ä¿®æ”¹
 function editRes() {
     var res = $("#res_group_datagrid").treegrid("getSelected");
     if (res) {
@@ -20,23 +20,23 @@ function editRes() {
         $("#edit_res_record").dialog("open");
         $("#editResForm").form("load", res);
     } else {
-        $.messager.alert("ÌáÊ¾","ÇëÑ¡ÔñÒªĞŞ¸ÄµÄ¼ÇÂ¼","warning");
+        $.messager.alert("æç¤º","è¯·é€‰æ‹©è¦ä¿®æ”¹çš„è®°å½•","warning");
     }
 }
-//Ìá½»±íµ¥
+//æäº¤è¡¨å•
 function addResSubmit() {
     $('#addResForm').form("submit", {
-        url: "admin/resouces/add",
+        url: "admin/resouces/add",a
         method: "post",
         success: function (data) {
             var data = eval("(" + data + ")")
             if (data.success) {
                 $('#addResForm').form("clear");
                 $("#add_res_record").dialog("close");
-                showMessager("²Ù×÷³É¹¦£¡");
+                showMessager("æ“ä½œæˆåŠŸï¼");
                 $("#res_group_datagrid").treegrid("reload");
             } else {
-                $.messager.alert("ÌáÊ¾", "²Ù×÷Ê§°Ü", "warning");
+                $.messager.alert("æç¤º", "æ“ä½œå¤±è´¥", "warning");
 
             }
         }
@@ -46,7 +46,7 @@ function addResSubmit() {
 function delRes() {
     var _res = $("#res_group_datagrid").datagrid("getSelected");
     if (_res) {
-        $.messager.confirm('¾¯¸æ', 'È·¶¨ÒªÉ¾³ıÑ¡ÖĞµÄ¼ÇÂ¼Âğ?', function (r) {
+        $.messager.confirm('è­¦å‘Š', 'ç¡®å®šè¦åˆ é™¤é€‰ä¸­çš„è®°å½•å—?', function (r) {
             if (r) {
                 $.ajax({
                     url: 'admin/resouces/delete',
@@ -55,10 +55,10 @@ function delRes() {
                     data: {resid: _res.id},
                     success: function (data) {
                         if (data.success) {
-                            $.messager.alert('ÌáÊ¾', '²Ù×÷³É¹¦');
+                            $.messager.alert('æç¤º', 'æ“ä½œæˆåŠŸ');
                             $("#res_group_datagrid").treegrid("reload");
                         } else {
-                            $.messager.alert('ÌáÊ¾', '²Ù×÷Ê§°Ü', "warning");
+                            $.messager.alert('æç¤º', 'æ“ä½œå¤±è´¥', "warning");
                         }
                     }
                 });
@@ -66,7 +66,7 @@ function delRes() {
             return;
         });
     } else {
-        $.messager.alert("ÌáÊ¾", "ÇëÑ¡ÔñÒªÉ¾³ıµÄ¼ÇÂ¼", "warning");
+        $.messager.alert("æç¤º", "è¯·é€‰æ‹©è¦åˆ é™¤çš„è®°å½•", "warning");
     }
 
 }
@@ -81,9 +81,9 @@ function editResSubmit() {
                 $('#editResForm').form("clear");
                 $("#edit_res_record").dialog("close");
                 $("#res_group_datagrid").treegrid("reload");
-                $.messager.alert("ÌáÊ¾", "²Ù×÷³É¹¦");
+                $.messager.alert("æç¤º", "æ“ä½œæˆåŠŸ");
             } else {
-                $.messager.alert("ÌáÊ¾", "²Ù×÷Ê§°Ü", "warning");
+                $.messager.alert("æç¤º", "æ“ä½œå¤±è´¥", "warning");
 
             }
         }

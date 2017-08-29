@@ -12,11 +12,11 @@
     </thead>
 </table>
 <div id="sys_authority_res_tools" style="text-align: right;">
-    <security:authorize ifAllGranted="AUTH_AUTH_RESOUCES_ADD">
+    <security:authorize access="hasRole('AUTH_AUTH_RESOUCES_ADD')">
         <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true"
            onclick="addAuthorityRes();">添加</a>
     </security:authorize>
-    <security:authorize ifAllGranted="AUTH_AUTH_RESOUCES_DELETE">
+    <security:authorize access="hasRole('AUTH_AUTH_RESOUCES_DELETE')">
         <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-del',plain:true"
            onclick="delAuthorityRes()">删除</a>
     </security:authorize>

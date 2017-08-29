@@ -19,11 +19,11 @@
     </thead>
 </table>
 <div id="user_role_tools" style="text-align: right;" data-options="closed:true,width:600,height:400,modal:true,,iconCls:'icon-role'">
-    <security:authorize ifAllGranted="AUTH_USER_ROLE_ADD">
+    <security:authorize access="hasRole('AUTH_USER_ROLE_ADD')">
         <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true"
            onclick="addUserRole();">添加</a>
     </security:authorize>
-    <security:authorize ifAllGranted="AUTH_USER_ROLE_DELETE">
+    <security:authorize access="hasRole('AUTH_USER_ROLE_DELETE')">
         <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-del',plain:true"
            onclick="delUserRole()">删除</a>
     </security:authorize>

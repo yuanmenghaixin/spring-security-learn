@@ -37,19 +37,19 @@
         </table>
         <%--工具栏--%>
         <div id="sys_authority_tools" style="text-align: right;">
-            <security:authorize ifAllGranted="AUTH_AUTH_ADD">
+            <security:authorize access="hasRole('AUTH_AUTH_ADD')">
                 <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true"
                    onclick="addAuthority();">添加</a>
             </security:authorize>
-            <security:authorize ifAllGranted="AUTH_AUTH_EDIT">
+            <security:authorize access="hasRole('AUTH_AUTH_EDIT')">
                 <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-edit',plain:true"
                    onclick="editAuthority();">修改</a>
             </security:authorize>
-            <security:authorize ifAllGranted="AUTH_AUTH_RESOUCES_LIST">
+            <security:authorize access="hasRole('AUTH_AUTH_RESOUCES_LIST')">
                 <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-res',plain:true"
                    onclick="showAuthorityRes();">关联资源</a>
             </security:authorize>
-            <security:authorize ifAllGranted="AUTH_AUTH_DELETE">
+            <security:authorize access="hasRole('AUTH_AUTH_DELETE')">
                 <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-del',plain:true"
                    onclick="delAuthority();">删除</a>
             </security:authorize>

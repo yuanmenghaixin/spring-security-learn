@@ -18,15 +18,15 @@
     </thead>
 </table>
 <div id="sys_menu_list_tools" style="text-align: right;">
-    <security:authorize ifAllGranted="AUTH_MENU_ADD">
+    <security:authorize access="hasRole('AUTH_MENU_ADD')">
         <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true"
            onclick="addMenu();">添加</a>
     </security:authorize>
-    <security:authorize ifAllGranted="AUTH_MENU_EDIT">
+    <security:authorize access="hasRole('AUTH_MENU_EDIT')">
         <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-edit',plain:true"
            onclick="editMenu();">修改</a>
     </security:authorize>
-    <security:authorize ifAllGranted="AUTH_MENU_DELETE">
+    <security:authorize access="hasRole('AUTH_MENU_DELETE')">
         <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-del',plain:true"
            onclick="delMenu()">删除</a>
     </security:authorize>
