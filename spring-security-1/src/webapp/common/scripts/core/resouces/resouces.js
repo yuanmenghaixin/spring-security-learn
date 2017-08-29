@@ -26,7 +26,7 @@ function editRes() {
 //提交表单
 function addResSubmit() {
     $('#addResForm').form("submit", {
-        url: "admin/resouces/add",a
+        url: "admin/resouces/add",
         method: "post",
         success: function (data) {
             var data = eval("(" + data + ")")
